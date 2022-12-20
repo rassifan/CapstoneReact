@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family:"Karala", sans-serif
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.nav-bar{
+  position: relative;
+width: 100%;
+height: 65px;
+background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+display: flex;
+}
+.logo-text{
+  position: relative;
+width: 140.79px;
+height: 24px;
+left: 58px;
+top: 21px;
+nav-left: auto;
+font-family: 'Karla';
+font-style: normal;
+font-weight: 700;
+font-size: 20.7482px;
+line-height: 24px;
+letter-spacing: -0.1em;
+
+color: #FFFFFF;
+
+}
+.img{
+  position: absolute;
+  width: 31.31px;
+  height: 26.22px;
+  nav-left: auto;
+  left: 20px;
+  top: 19px;
+}
+.name{
+  position:relative;
+  width: 189px;
+  height: 19px;
+  margin-top: 25px;
+  margin-left: 67%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 15px;
+text-align: right;
+
+color: #FFFFFF;
+
+}
+
+.form--button{
+  grid-column: 1 / -1;
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+.form{
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 17px;
+}
+.form--input{
+  font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+main {
+    padding: 36px;
+}

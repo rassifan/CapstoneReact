@@ -1,0 +1,53 @@
+body{
+    background-color: #20232a;
+}
+.Topic{
+    display: inline-flex;
+    color: rgb(32, 159, 244);
+    margin-right: auto;
+    padding-left: 2%;
+}
+.Project{
+    font-size: medium;
+    display: inline-flex;
+    padding-left: 60%;
+    margin-top: 0;
+    color: aliceblue;
+    margin-top: 20px;
+    margin-right: auto;
+}
+.Nav{
+    background-color: rgb(38, 33, 45);
+    align-items: center;
+    display: flex;
+}
+.List-header{
+    font-weight: 1100;
+    color: aliceblue;
+}
+.List{
+    padding-left: 20px;
+    background-color: #20232a;
+    color: aliceblue;
+    background-image: url(../images/R.jpg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 75%; 
+    background-size: 40%;
+}
+li{
+    padding-block: 10px;
+
+}
+li::marker{
+    color: rgb(32, 159, 244);
+    font-size: larger;
+    
+}
+
+.app{
+    padding-left: 20px;
+    background-color: #20232a;
+
+}
+
