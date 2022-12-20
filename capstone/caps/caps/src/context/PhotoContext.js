@@ -9,7 +9,7 @@ function Photos() {
     // Get the allPhotos array from context
     // map over it, creating <Image /> elements of the component we just made
     // <Image key={???} img={<full image object here>} className={getClass(<index of image>)} />
-    const {allPhotos} = useContext(Context)
+    const {allPhotos} = useContex(Context)
     const List = allPhotos.map((item, index) => (
         <Image key = {item.id} img ={item} className = { getClass(item[index])}/>
     ))
