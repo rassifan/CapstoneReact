@@ -1,14 +1,15 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import {BrowserRouter as Router} from "react-router-dom"
-import PhotoContextProvider from "./context/PhotoContext"
+
+import {ContextProvider} from "../src/context/PhotoContext"
 import App from "./App"
 
 ReactDOM.render(
-    <PhotoContextProvider>
+    <ContextProvider>
         <Router>
             <App />
         </Router>
-    </PhotoContextProvider>, 
+    </ContextProvider>, 
     document.getElementById("root")
 )
