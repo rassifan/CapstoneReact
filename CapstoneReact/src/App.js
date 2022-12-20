@@ -10,8 +10,8 @@ function App() {
             <Header />
             <h1>Home Page</h1>
         <Routes>
-        <Route path="/"> <Cart/> </Route>
-        <Route path="/cart"> <Photos/> </Route>
+            <Route path="/"> <Cart/> </Route>
+            <Route path="/cart"> <Photos/> </Route>
         </Routes>
         </div>
         
