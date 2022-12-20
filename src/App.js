@@ -6,7 +6,6 @@ import { Route, Routes, Switch} from "react-router-dom"
 
 function App() {    
     return (
-        <Routes>
         <div>
             <Header />
             <h1>Home Page</h1>
