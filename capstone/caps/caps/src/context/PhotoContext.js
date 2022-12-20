@@ -1,21 +1,23 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 
-const Context = React.createContext()
+import Image from "../components/Image"
+import {getClass} from "../utils"
+import {useContex} from "react"
+import {Context} from "./Context"
 
-function ContextProvider({children}) {
-    const [allPhotos, setAllPhotos] = useState([])
-    useEffect(() => {
-    fetch("https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json")
-    .then(response => response.json())
-        // 4. Setting *dogImage* to the image url that we received from the response above
-    .then(data => setAllPhotos(data))
-    },[])
-    
+function Photos() {
+    // Get the allPhotos array from context
+    // map over it, creating <Image /> elements of the component we just made
+    // <Image key={???} img={<full image object here>} className={getClass(<index of image>)} />
+    const {allPhotos} = useContext(Context)
+    const List = allPhotos.map((item, index) => (
+        <Image key = {item.id} img ={item} className = { getClass(item[index])}/>
+    ))
     return (
-        <Context.Provider value={{allPhotos}}>
-            {children}
-        </Context.Provider>
+        <main className="photos">
+            {List}
+        </main>
     )
 }
 
-export {ContextProvider, Context}
+export default Photos
