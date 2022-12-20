@@ -1,5 +1,7 @@
 import React, {useState, useContext} from "react"
-import {Context} from "../Context/PhotoContext"
+import PropTypes from "prop-types"
+
+import {Context} from "../Context"
 
 function Image({className, img}) {
     const [hovered, setHovered] = useState(false)
@@ -26,6 +28,15 @@ function Image({className, img}) {
             {cartIcon}
         </div>
     )
+}
+
+Image.propTypes = {
+    className: PropTypes.string,
+    img: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        isFavorite: PropTypes.bool
+    })
 }
 
 export default Image
