@@ -1,23 +1,38 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 
-import Image from "../components/Image"
-import {getClass} from "../utils"
-import {useContex} from "react"
-import {Context} from "./Context"
+const Context = React.createContext()
 
-function Photos() {
-    // Get the allPhotos array from context
-    // map over it, creating <Image /> elements of the component we just made
-    // <Image key={???} img={<full image object here>} className={getClass(<index of image>)} />
-    const {allPhotos} = useContex(Context)
-    const List = allPhotos.map((item, index) => (
-        <Image key = {item.id} img ={item} className = { getClass(item[index])}/>
-    ))
+function ContextProvider({children}) {
+    const [allPhotos, setAllPhotos] = useState([])
+    const [cartItems, setCartItems] = useState([])
+    
+    const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setAllPhotos(data))
+    }, [])
+    
+    function toggleFavorite(id) {
+        const updatedArr = allPhotos.map(photo => {
+            if(photo.id === id) {
+                return {...photo, isFavorite: !photo.isFavorite}
+            }
+            return photo
+        })
+        
+        setAllPhotos(updatedArr)
+    }
+    
+    function addToCart(newItem) {
+        setCartItems(prevItems => [...prevItems, newItem])
+    }
+    
     return (
-        <main className="photos">
-            {List}
-        </main>
+        <Context.Provider value={{allPhotos, toggleFavorite, addToCart, cartItems}}>
+            {children}
+        </Context.Provider>
     )
 }
 
-export default Photos
+export {ContextProvider, Context}
